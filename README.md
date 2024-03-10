@@ -1,3 +1,3 @@
-# Web Scraping with Python Code Samples
+# Web Scraping with Python
 
 These code samples are for the book <a href="http://shop.oreilly.com/product/0636920078067.do">Web Scraping with Python 2nd Edition</a>
