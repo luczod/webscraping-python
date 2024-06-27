@@ -7,6 +7,8 @@ def download_website(url, statusCode):
     response = requests.get(url)
     if response.status_code == statusCode:
         soup = BeautifulSoup(response.content, 'html.parser')
+        """ with open('index.html', 'w', encoding='utf-8') as file:
+            file.write(str(soup)) """        
         return str(soup)
     else:
         print(
