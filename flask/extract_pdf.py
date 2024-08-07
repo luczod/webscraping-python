@@ -35,8 +35,17 @@ def download_files(links, download_folder):
             print(f"Failed to download {link}: {e}")
 
 if __name__ == "__main__":
-    pdf_path = "file.pdf"  # Replace with your PDF file path
-    download_folder = "downloaded_audios"
+    # pdf_path = "file.pdf"  # Replace with your PDF file path
+    # download_folder = "downloaded_audios"
+    decks = []
+    for root, dirs, files in os.walk('dir'):
+        for file in files:
+            if 'Deck' in file:
+                decks.append(file)
 
-    links = extract_links_from_pdf(pdf_path)
-    download_files(links, download_folder)
+    for pdf_file in decks:
+        print(pdf_file)
+        print(pdf_file[:7])
+        download_folder = f"downloaded_audios/{pdf_file[:7]}"
+        links = extract_links_from_pdf(pdf_file)
+        download_files(links, download_folder)
