@@ -3,7 +3,7 @@ import fitz  # PyMuPDF
 import requests
 import os
 
-def extract_links_from_pdf(pdf_path):
+def extract_links_from_pdf(pdf_path: str) -> list[str]:
     # Open the PDF file
     pdf_document = fitz.open(pdf_path)
 
@@ -19,7 +19,7 @@ def extract_links_from_pdf(pdf_path):
     pdf_document.close()
     return links
 
-def download_files(links, download_folder):
+def download_files(links: str, download_folder: str) -> None:
     if not os.path.exists(download_folder):
         os.makedirs(download_folder)
     # List[start:stop:step]

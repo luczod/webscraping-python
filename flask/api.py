@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def download_website(url, statusCode):
+def download_website(url: str, statusCode: int) -> (str | None):
     response = requests.get(url)
     if response.status_code == statusCode:
         soup = BeautifulSoup(response.content, 'html.parser')
@@ -28,7 +28,7 @@ def echo():
 
     else:
         # Return an error message if the request doesn't contain JSON content
-        return jsonify({'error': 'Request body must be in JSON format'}), 400
+        return jsonify({'error': 'Request body must be in JSON format'}, status=400)
 
 
 @app.route('/page_html', methods=['GET'])
