@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, Response
 import requests
 from bs4 import BeautifulSoup
 
@@ -19,7 +19,7 @@ app = Flask(__name__)
 
 
 @app.route('/echo', methods=['POST'])
-def echo():
+def echo() -> Response:
     # Check if the request has JSON content
     if request.is_json:
         data = request.json
@@ -32,7 +32,7 @@ def echo():
 
 
 @app.route('/page_html', methods=['GET'])
-def page_html():
+def page_html() -> Response:
     return render_template('page_404.html')
 
 
