@@ -33,7 +33,7 @@ def echo() -> Response:
 
 @app.route('/page_html', methods=['GET'])
 def page_html() -> Response:
-    return render_template('page_404.html')
+    return render_template('page_404.html', content = "Sorry, the page you are looking for could not be found.")
 
 
 if __name__ == '__main__':
