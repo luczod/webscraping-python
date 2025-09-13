@@ -2,6 +2,7 @@
 lib/
 node_modules/
 venv/
+.venv/
 *.egg-info/
 .ipynb_checkpoints
 *.tsbuildinfo
